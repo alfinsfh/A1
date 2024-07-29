@@ -1,3 +1,19 @@
+
+document.addEventListener('mousemove', function(event) {
+    const foregroundImage = document.getElementById('foreground');
+    
+    // Get the center of the viewport
+    const x = (event.clientX / window.innerWidth) * 2 - 1;
+    const y = (event.clientY / window.innerHeight) * 2 - 1;
+    
+    // Set the movement range for the foreground image
+    const movementX = x * 20; // Adjust this value to change movement intensity
+    const movementY = y * 20; // Adjust this value to change movement intensity
+
+    foregroundImage.style.transform = `translate3d(${movementX}px, ${movementY}px, 0)`;
+});
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const studentId = urlParams.get('id');
@@ -32,7 +48,16 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="subtext">25 Tweets</div>
         </div>
         <div class="wallpaper">
-        <img src="${student.foto_profil}" alt="${student.nama_panggilan}">
+       
+<div class="parallax-wrapper">
+	<div class="layer" data-mouse-parallax="0.1">
+
+        <img src="${student.foto_profil}" alt="Foreground Image" id="foreground">
+
+
+  </div>
+	<div class="layer" data-mouse-parallax="0.3">${student.tanggal_lahir}</div>
+</div>
         </div>
         <div class="bio">
 
@@ -204,4 +229,18 @@ window.addEventListener("load", main);
 
 function switchTheme() {
     document.body.classList.toggle('light-theme');
-}
+};
+
+document.addEventListener('mousemove', function(event) {
+    const foregroundImage = document.getElementById('foreground');
+    
+    // Get the center of the viewport
+    const x = (event.clientX / window.innerWidth) * 2 - 1;
+    const y = (event.clientY / window.innerHeight) * 2 - 1;
+    
+    // Set the movement range for the foreground image
+    const movementX = x * 20; // Adjust this value to change movement intensity
+    const movementY = y * 20; // Adjust this value to change movement intensity
+
+    foregroundImage.style.transform = `translate3d(${movementX}px, ${movementY}px, 0)`;
+});
