@@ -1,0 +1,119 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+:root {
+    --background-color: #1c1c1e; /* Dark gray background */
+    --text-color: #f2f2f7; /* Light gray text */
+    --primary-color: #0a84ff; /* Blue accent color */
+    --secondary-color: #3a3a3c; /* Darker gray for elements */
+    --border-color: #2c2c2e; /* Border color */
+    --highlight-color: #5ac8fa; /* Highlight color */
+}
+
+h1, h2 {
+    color: #333;
+}
+
+#searchInput, #kelasFilter, #kelaminFilter {
+    margin: 10px;
+    padding: 5px;
+}
+
+#studentList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.student-card {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.profile-pic, .activity-logo, .badge-logo {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+    display: flex;
+}
+
+.photo-gallery img {
+    width: 100px;
+    height: auto;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+button {
+    margin: 10px;
+}
+
+.badge-container {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    padding: 10px 34px;
+    border-radius: 50px;
+    margin-right: 24px;
+    align-items: center;
+    display: flex;
+}
+
+
+.tooltip-container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .tooltip-container .badge-logo {
+    cursor: pointer;
+    width: 24px; /* Adjust size as needed */
+    height: 24px; /* Adjust size as needed */
+    margin-left: 4px;
+  }
+  
+  .tooltip {
+    position: absolute;
+    bottom: 125%; /* Position above the badge */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--border-color); /* Tooltip background color */
+    color: white; /* Tooltip text color */
+    padding: 5px;
+    border-radius: 5px;
+    width: 150px; /* Adjust width as needed */
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    font-size: 13px;
+  }
+  
+  .tooltip-container:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .tooltip-container .tooltip::before {
+    content: "";
+    position: absolute;
+    top: 100%; /* Position below the tooltip */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #6e7681 transparent transparent transparent; /* Tooltip triangle */
+  }
+  
+
+
+

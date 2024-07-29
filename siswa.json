@@ -1,0 +1,88 @@
+[
+    {
+        "id_siswa": "12345",
+        "nama_lengkap": "Jane Doe",
+        "nama_panggilan": "Jane",
+        "kelas": "12 IPA 3",
+        "jurusan": "Ilmu Pengetahuan Alam",
+        "tanggal_lahir": "2005-04-15",
+        "kelamin": "Perempuan",
+        "jabatan_di_kelas": "Ketua Kelas",
+        "biografi": "Saya suka sains dan ingin menjadi dokter.",
+        "sosial_media": {
+            "instagram": "@janedoe",
+            "twitter": "@janedoe",
+            "tiktok": "@janedoe"
+        },
+        "foto_profil": "https://i.pinimg.com/564x/c7/fe/52/c7fe5203dd9cc8a8a59393b8a522426c.jpg",
+        "quote_favorit": "Stay positive, work hard, make it happen.",
+        "teman_terdekat": ["67890", "54321"],
+        "prestasi": [
+            "Juara 1 Olimpiade Biologi",
+            "Ketua OSIS"
+        ],
+        "aktivitas_ekstrakurikuler": [
+            {"id_ekskul": "basket", "nama": "Basket", "logo": "basket_logo.png"},
+            {"id_ekskul": "choir", "nama": "Paduan Suara", "logo": "choir_logo.png"}
+        ],
+        "foto_galeri": ["foto1.jpg", "foto2.jpg"],
+        "hobi_dan_minat": [
+            "Membaca",
+            "Travelling"
+        ],
+        "playlist_musik": "https://open.spotify.com/playlist/123456",
+        "kesan_dan_pesan": [
+            {"nama": "John Smith", "pesan": "Jane adalah teman yang selalu bisa diandalkan."}
+        ],
+        "mimpi_dan_cita-cita": "Menjadi dokter dan membantu banyak orang.",
+        "statistik_akademis": {
+            "semester_1": {"rata_rata": 85},
+            "semester_2": {"rata_rata": 88}
+        },
+        "badge_penghargaan": [
+            {"nama": "Best Student", "logo": "Best-Student.svg"},
+            {"nama": "Science Olympiad Winner", "logo": "Best-Student.svg"}
+        ]
+    },
+    {
+        "id_siswa": "54321",
+        "nama_lengkap": "John Smith",
+        "nama_panggilan": "John",
+        "kelas": "12 IPA 3",
+        "jurusan": "Ilmu Pengetahuan Alam",
+        "tanggal_lahir": "2005-06-20",
+        "kelamin": "Laki-laki",
+        "jabatan_di_kelas": "Wakil Ketua Kelas",
+        "biografi": "Saya suka olahraga dan teknologi.",
+        "sosial_media": {
+            "instagram": "@johnsmith",
+            "twitter": "@johnsmith"
+        },
+        "foto_profil": "https://i.pinimg.com/564x/8c/85/a9/8c85a98a445d87ec6d8c3a84fd7985cc.jpg",
+        "quote_favorit": "Be yourself; everyone else is already taken.",
+        "teman_terdekat": ["67890", "54321"],
+        "prestasi": [
+            "Juara 2 Olimpiade Matematika"
+        ],
+        "aktivitas_ekstrakurikuler": [
+            {"id_ekskul": "basket", "nama": "Basket", "logo": "basket_logo.png"}
+        ],
+        "foto_galeri": ["john_foto1.jpg"],
+        "hobi_dan_minat": [
+            "Bermain Video Game",
+            "Programming"
+        ],
+        "playlist_musik": "https://open.spotify.com/playlist/654321",
+        "kesan_dan_pesan": [
+            {"nama": "Jane Doe", "pesan": "John sangat pintar dan berbakat di olahraga."}
+        ],
+        "mimpi_dan_cita-cita": "Menjadi engineer dan membuat inovasi teknologi.",
+        "statistik_akademis": {
+            "semester_1": {"rata_rata": 80},
+            "semester_2": {"rata_rata": 82}
+        },
+        "badge_penghargaan": [
+            {"nama": "Top Scorer", "logo": "top_scorer_badge.png"}
+        ]
+    }
+]
