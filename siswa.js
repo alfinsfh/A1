@@ -89,6 +89,25 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="subtext">@codegem_io</div>
         </div>
 
+<div class="friends-container">
+    <ul class="closest-friends-list">
+        ${friends.slice(0, 3).map(friend => `
+            <li class="friend-card">
+                <a href="siswa.html?id=${friend.id_siswa}" class="friend-link">
+                    <img src="${friend.foto_profil}" alt="${friend.nama_lengkap}" class="friend-image">
+                </a>
+            </li>
+        `).join('')}
+    </ul>
+    ${friends.length > 3 ? `
+        <div class="more-friends-container">
+            <a href="teman.html?id=${student.id_siswa}" class="more-friends-link">
+                +${friends.length - 3}
+            </a>
+        </div>
+    ` : ''}
+</div>
+
         <div>🚀 We show you how to code cool stuff</div>
         <div>
             <a href="https://linktr.ee/codegem">linktr.ee/codegem</a>

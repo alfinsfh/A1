@@ -460,3 +460,78 @@ button {
         opacity: 1;
     }
 }
+
+/* Styling untuk judul */
+.closest-friends-title {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+/* Container untuk daftar teman dan link "lebih banyak teman" */
+.friends-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 1em;
+    padding-left: 30px;
+}
+
+/* Styling untuk daftar teman */
+.closest-friends-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 0.5em;
+    flex-wrap: wrap;
+}
+
+/* Styling untuk setiap item teman */
+.friend-card {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: -30px;
+}
+
+/* Styling untuk link teman */
+.friend-link {
+    display: block;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Styling untuk gambar profil teman */
+.friend-image {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--background-color);
+}
+
+
+/* Styling untuk container "lebih banyak teman" */
+.more-friends-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Styling untuk link "lebih banyak teman" */
+.more-friends-link {
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: 500;
+    padding-top: 5px;
+    font-size: 10px;
+    background-color: var(--background-color);
+    padding: 10px 12px;
+    border-radius: 50px;
+    position: relative;
+    margin-left: -34px;
+}
+
+.more-friends-link:hover {
+    text-decoration: underline;
+}
+
