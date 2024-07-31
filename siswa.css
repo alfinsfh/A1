@@ -14,6 +14,7 @@ body {
 }
 
 :root {
+    --gap: 8vh; /* Adjust gap based on viewport width */
     --background-color: #1c1c1e;
     /* Dark gray background */
     --text-color: #f2f2f7;
@@ -78,6 +79,7 @@ body {
     border: 1px solid var(--border-color);
     margin: 0px auto;
     top: 0;
+    overflow: hidden;
 }
 
 /* ------ General ------ */
@@ -163,15 +165,18 @@ a {
 
 /* ------ WALLPAPER ------ */
 .wallpaper {
-    background-color: var(--wallpaper-color);
+    --color: rgba(114, 114, 114, 0.3);
+    background-color: var(--background-color);
+    background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
+        linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
+    background-size: 55px 55px;
     height: 250px;
+    margin-top: 10vh;
+    overflow: hidden;
 }
 
 .wallpaper img {
-    height: 250px;
-    width: 100%;
-    object-fit: cover;
-    filter: grayscale(1) invert(1) ;
+
 }
 
 
@@ -309,47 +314,149 @@ button {
     cursor: pointer;
 }
 
-.parallax-wrapper {
-    width: 100%;
-    height: 250px;
-    background-color: #0c0c0c;
-    position: relative;
+.container-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0px 50px;
+}
+
+.banner {
     overflow: hidden;
-
-
-
-}
-    .layer {
-        width: 80%;
-        height: 80%;
-        position: absolute;
-        left: 80px;
-        text-align: center;
-        line-height: 300px;
-        font-size: 38px;
-        color: #FFF;
-        transition: all 200ms ease-out;
-    }
-.parallax-wrapper img {
-    width: 300px;
-    height: 150px;
-    position: relative;
-    top: 50px;
-    right: 70px;
-}
-
-.parallax {
-    position: relative;
-    width: 100vw; /* Full width of the viewport */
-    height: 300px; /* Adjust this height to fit your banner design */
-    overflow: hidden;
-    background: url('https://www.example.com/your-background-image.jpg') no-repeat center center;
-    background-size: cover;
-}
-.parallax img {
+    height: auto;
     position: absolute;
+    width: 20vw; /* Responsive width relative to viewport width */
+    aspect-ratio: 1;
+    max-width: 150px;
+    max-height: 150px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s; /* Smooth transition for scaling */
+}
+
+.banner img {    
+    border: 8px solid #fff;
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.banner:nth-child(1) {
+    transform: rotate(10deg) translate(calc(-2 * var(--gap)));
+}
+
+.banner:nth-child(2) {
+    transform: rotate(5deg) translate(calc(-1 * var(--gap)));
+}
+
+.banner:nth-child(3) {
+    transform: rotate(-3deg);
+}
+
+.banner:nth-child(4) {
+    transform: rotate(-10deg) translate(var(--gap));
+}
+
+.banner:nth-child(5) {
+    transform: rotate(2deg) translate(calc(2 * var(--gap)));
+}
+
+
+/* Basic styling for the modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Hide scrollbars */
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+    transition: opacity 0.3s ease;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1; /* Behind the dialog */
+}
+
+/* Modal Dialog */
+.modal-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+    z-index: 1; /* In front of overlay */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    max-width: 90vh; /* Responsive width */
+    max-height: 80vh; /* Responsive height */
+    overflow: hidden;
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Modal Image */
+.modal-image {
     width: 100%;
     height: auto;
-    transform: translate3d(0, 0, 0);
-    will-change: transform;
+    border-radius: 8px;
+    display: block;
+    max-height: 80vh; /* Responsive height */
+    object-fit: cover;
+}
+
+/* Caption Text */
+.modal-caption {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #555;
+    text-align: center;
+}
+
+/* Close Button */
+.close {
+    color: #000000;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    z-index: 2;
+    background-color: #ffffff;
+    right: 0;
+    padding: 10px 10px;
+    border-radius: 50px;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

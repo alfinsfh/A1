@@ -25,7 +25,7 @@
             {"id_ekskul": "basket", "nama": "Basket", "logo": "basket_logo.png"},
             {"id_ekskul": "choir", "nama": "Paduan Suara", "logo": "choir_logo.png"}
         ],
-        "foto_galeri": ["foto1.jpg", "foto2.jpg"],
+        "foto_galeri": ["https://i.pinimg.com/736x/d6/18/a1/d618a1bdd23c0bdc288a139c09110a52.jpg","https://i.pinimg.com/736x/d6/18/a1/d618a1bdd23c0bdc288a139c09110a52.jpg","https://i.pinimg.com/736x/d6/18/a1/d618a1bdd23c0bdc288a139c09110a52.jpg","https://i.pinimg.com/736x/d6/18/a1/d618a1bdd23c0bdc288a139c09110a52.jpg", "https://i.pinimg.com/736x/d6/18/a1/d618a1bdd23c0bdc288a139c09110a52.jpg"],
         "hobi_dan_minat": [
             "Membaca",
             "Travelling"
