@@ -5,7 +5,7 @@
         "nama_panggilan": "Jane",
         "kelas": "12 IPA 3",
         "jurusan": "Ilmu Pengetahuan Alam",
-        "tanggal_lahir": "2005-04-15",
+        "tanggal_lahir": "2002-08-02",
         "kelamin": "Perempuan",
         "jabatan_di_kelas": "Ketua Kelas",
         "biografi": "Saya suka sains dan ingin menjadi dokter.",
@@ -22,8 +22,8 @@
             "Ketua OSIS"
         ],
         "aktivitas_ekstrakurikuler": [
-            {"id_ekskul": "basket", "nama": "Basket", "logo": "basket_logo.png"},
-            {"id_ekskul": "choir", "nama": "Paduan Suara", "logo": "choir_logo.png"}
+            {"id_ekskul": "basket", "nama": "Basket", "logo": "https://id.wikipedia.org/static/images/icons/wikipedia.png"},
+            {"id_ekskul": "choir", "nama": "Paduan Suara", "logo": "https://id.wikipedia.org/static/images/icons/wikipedia.png"}
         ],
         "foto_galeri": ["https://i.pinimg.com/736x/d6/18/a1/d618a1bdd23c0bdc288a139c09110a52.jpg","https://i.pinimg.com/736x/d6/18/a1/d618a1bdd23c0bdc288a139c09110a52.jpg","https://i.pinimg.com/736x/d6/18/a1/d618a1bdd23c0bdc288a139c09110a52.jpg","https://i.pinimg.com/736x/d6/18/a1/d618a1bdd23c0bdc288a139c09110a52.jpg", "https://i.pinimg.com/736x/d6/18/a1/d618a1bdd23c0bdc288a139c09110a52.jpg"],
         "hobi_dan_minat": [
@@ -34,7 +34,7 @@
         "kesan_dan_pesan": [
             {"nama": "John Smith", "pesan": "Jane adalah teman yang selalu bisa diandalkan."}
         ],
-        "mimpi_dan_cita-cita": "Menjadi dokter dan membantu banyak orang.",
+        "mimpi_dan_cita_cita": "Menjadi dokter dan membantu banyak orang.",
         "statistik_akademis": {
             "semester_1": {"rata_rata": 85},
             "semester_2": {"rata_rata": 88}

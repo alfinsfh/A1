@@ -1,18 +1,42 @@
-<h2>Teman Terdekat</h2>
-<ul class="friends-list-dott">
-    ${friends.slice(0, 3).map(friend => `
-        <li>
-            <a href="siswa.html?id=${friend.id_siswa}">
-                <img src="${friend.foto_profil}" alt="${friend.nama_lengkap}" class="profile-pic">
-                ${friend.nama_lengkap}
-            </a>
-        </li>
-    `).join('')}
-    ${friends.length > 3 ? `
-        <li>
-            <a href="teman.html?id=${student.id_siswa}" class="more-friends">
-                +${friends.length - 3} Teman Lagi
-            </a>
-        </li>
-    ` : ''}
-</ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Teman</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <button onclick="window.history.back()">Kembali</button>
+    <div id="friend-list-container">
+        <h1>Daftar Teman</h1>
+        <ul id="friend-list">
+            <li class="friend-item">
+                <img src="avatar1.jpg" alt="Avatar" class="friend-avatar">
+                <div class="friend-info">
+                    <p class="friend-name">Nama Teman 1</p>
+                    <p class="friend-status">Online</p>
+                </div>
+            </li>
+            <li class="friend-item">
+                <img src="avatar2.jpg" alt="Avatar" class="friend-avatar">
+                <div class="friend-info">
+                    <p class="friend-name">Nama Teman 2</p>
+                    <p class="friend-status">Offline</p>
+                </div>
+            </li>
+            <!-- Add more friends here -->
+        </ul>
+    </div>
+</body>
+</html>
+
+
+<li>
+    <a href="siswa.html?id=${friend.id_siswa}">
+        <img src="${friend.foto_profil}" alt="${friend.nama_lengkap}" class="profile-pic">
+        ${friend.nama_lengkap}
+    </a>
+</li>

@@ -22,12 +22,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const friendList = document.getElementById('friend-list');
             friendList.innerHTML = friends.map(friend => `
-                <li>
-                    <a href="siswa.html?id=${friend.id_siswa}">
-                        <img src="${friend.foto_profil}" alt="${friend.nama_lengkap}" class="profile-pic">
-                        ${friend.nama_lengkap}
-                    </a>
-                </li>
+ <li class="friend-item">
+                <a href="siswa.html?id=1">
+                     <img src="${friend.foto_profil}" alt="${friend.nama_lengkap}" class="friend-avatar">
+                     <div class="friend-info">
+                    <p class="friend-name">${friend.nama_lengkap}</p>
+                    <p class="friend-status">Offline</p>
+                </a>
+            </li>
+
+                
             `).join('');
         })
         .catch(error => {

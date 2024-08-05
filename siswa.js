@@ -1,5 +1,4 @@
 
-
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const studentId = urlParams.get('id');
@@ -20,11 +19,69 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
+            // Fungsi untuk menghitung umur
+            function calculateAge(birthDate) {
+                const today = new Date();
+                const birth = new Date(birthDate);
+                let age = today.getFullYear() - birth.getFullYear();
+                const monthDiff = today.getMonth() - birth.getMonth();
+                if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+                    age--;
+                }
+                return age;
+            }
+
+            // Fungsi untuk menentukan zodiak
+            function getZodiacSign(birthDate) {
+                const date = new Date(birthDate);
+                const day = date.getDate();
+                const month = date.getMonth() + 1; // January is 0!
+
+                if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) return "Aquarius";
+                if ((month === 2 && day >= 19) || (month === 3 && day <= 20)) return "Pisces";
+                if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) return "Aries";
+                if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) return "Taurus";
+                if ((month === 5 && day >= 21) || (month === 6 && day <= 20)) return "Gemini";
+                if ((month === 6 && day >= 21) || (month === 7 && day <= 22)) return "Cancer";
+                if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) return "Leo";
+                if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) return "Virgo";
+                if ((month === 9 && day >= 23) || (month === 10 && day <= 22)) return "Libra";
+                if ((month === 10 && day >= 23) || (month === 11 && day <= 21)) return "Scorpio";
+                if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) return "Sagittarius";
+                if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) return "Capricorn";
+            }
+
+            // Fungsi untuk menghitung sisa hari atau tahun sampai ulang tahun berikutnya
+            function calculateDaysUntilBirthday(birthDate) {
+                const today = new Date();
+                const birthday = new Date(birthDate);
+                birthday.setFullYear(today.getFullYear());
+
+                if (today > birthday) {
+                    birthday.setFullYear(today.getFullYear() + 1);
+                }
+
+                const timeDiff = birthday - today;
+                const days = Math.ceil(timeDiff / (1000 * 3600 * 24));
+                return days;
+            }
+
+            // Format tanggal ulang tahun
+            function formatDate(date) {
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                return new Date(date).toLocaleDateString(undefined, options);
+            }
+
             // Extract friend IDs
             const friendIds = student.teman_terdekat;
             const friends = allStudents.filter(s => friendIds.includes(s.id_siswa));
 
             const profileDiv = document.getElementById('profile');
+            const birthDate = student.tanggal_lahir;
+            const age = calculateAge(birthDate);
+            const zodiacSign = getZodiacSign(birthDate);
+            const daysUntilBirthday = calculateDaysUntilBirthday(birthDate);
+
             profileDiv.innerHTML = `
 <div class="content">
     <div class="navigation">
@@ -86,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         <div>
             <div class="header">${student.nama_lengkap}</div>
-            <div class="subtext">@codegem_io</div>
+            <div class="subtext">${student.kelas}, ${student.jabatan_di_kelas}</div>
         </div>
 
 <div class="friends-container">
@@ -105,113 +162,115 @@ document.addEventListener('DOMContentLoaded', function() {
                 +${friends.length - 3}
             </a>
         </div>
-    ` : ''}
+    ` : ''} 
+    <div class="playlist">
+    <a href="${student.playlist_musik}" target="_blank">Dengarkan Playlist</a>
+</div>
 </div>
 
-        <div>🚀 We show you how to code cool stuff</div>
+  <div>
+           
+        </div>
+        <div>🚀 ${student.quote_favorit}</div>
         <div>
             <a href="https://linktr.ee/codegem">linktr.ee/codegem</a>
-            <span class="secondary">Joined March 2021</span>
+            <span class="secondary"> <p>${age} tahun, ${zodiacSign}</p>
+            <p>Ultah berikutnya: ${daysUntilBirthday} hari</p>
+            ${daysUntilBirthday === 0 ? '<p>Selamat Ulang Tahun!</p>' : ''}</span>
         </div>
-        <div>
-            15 <span class="secondary">Following</span>
-            12 <span class="secondary">Followers</span>
-        </div>
+        <div class="hobi-container">
+    <div class="hobi">
+        <ul>
+            ${student.hobi_dan_minat.map(hobi => `<li>${hobi}</li>`).join('')}
+        </ul>
+    </div>
+</div>
     </div>
 
     <div class="tabs">
-        <div class="selected" data-tab="tweets">Tweets</div>
-        <div data-tab="replies">Tweets & replies</div>
-        <div data-tab="media">Media</div>
-        <div data-tab="likes">Likes</div>
+        <div class="selected" data-tab="tweets">Informasi</div>
+        <div data-tab="media">Prestasi</div>
     </div>
 
     <div class="tab-content active" id="tweets">
-        Content for Tweets
-    </div>
-    <div class="tab-content" id="replies">
-        Content for Tweets & replies
-    </div>
-    <div class="tab-content" id="media">
-        Content for Media
-    </div>
-    <div class="tab-content" id="likes">
-        Content for Likes
-    </div>
 
-    <div class="controls">
-        <button onclick="switchTheme();" class="btn">Switch theme</button>
-    </div>
-
-    <img src="${student.foto_profil}" alt="${student.nama_panggilan}" class="profile-pic">
-    <h1>${student.nama_lengkap}</h1>
-    <p>Kelas: ${student.kelas}</p>
+    
+<section class="container-section">
+<div class="sec-informasi">
+    <h2>Prestasi</h2>
     <p>Jurusan: ${student.jurusan}</p>
     <p>Tanggal Lahir: ${student.tanggal_lahir}</p>
     <p>Kelamin: ${student.kelamin}</p>
-    <p>Jabatan di Kelas: ${student.jabatan_di_kelas}</p>
     <p>Biografi: ${student.biografi}</p>
-    <p>Quote Favorit: "${student.quote_favorit}"</p>
+    <p>Cita-cita: ${student.mimpi_dan_cita_cita}</p>
+</div>
+</section>
 
-    <h2>Teman Terdekat</h2>
-    <ul>
-        ${friends.map(friend => `
-            <li>
-                <a href="siswa.html?id=${friend.id_siswa}">
-                    <img src="${friend.foto_profil}" alt="${friend.nama_lengkap}" class="profile-pic">
-                    ${friend.nama_lengkap}
+
+
+
+    </div>
+
+    <div class="tab-content" id="media">
+
+    <section class="container-section">
+<div class="sec-extra">
+    <h2>Aktivitas Ekstrakurikuler</h2>
+    <ul class="extracurricular-list">
+        ${student.aktivitas_ekstrakurikuler.map(a => `
+            <li class="extracurricular-item">
+                <a href="ekstrakurikuler.html?nama=${encodeURIComponent(a.nama)}" class="extracurricular-link">
+                    <img src="${a.logo}" alt="${a.nama}" class="activity-logo">
+                    <span class="activity-name">${a.nama}</span>
                 </a>
             </li>
         `).join('')}
     </ul>
+</div>
+</section>
 
+<section class="container-section">
+<div class="sec-prestasi">
     <h2>Prestasi</h2>
     <ul>
         ${student.prestasi.map(p => `<li>${p}</li>`).join('')}
     </ul>
+</div>
+</section>
 
-    <h2>Aktivitas Ekstrakurikuler</h2>
-    <ul>
-        ${student.aktivitas_ekstrakurikuler.map(a => `
-            <li><a href="ekstrakurikuler.html?nama=${encodeURIComponent(a.nama)}">
-                <img src="${a.logo}" alt="${a.nama}" class="activity-logo">
-                ${a.nama}
-            </a></li>
-        `).join('')}
-    </ul>
-
-    <h2>Foto Galeri</h2>
-    <div class="photo-gallery">
-        ${student.foto_galeri.map(foto => `<img src="${foto}" alt="Foto Galeri">`).join('')}
-    </div>
-
-    <h2>Hobi dan Minat</h2>
-    <ul>
-        ${student.hobi_dan_minat.map(hobi => `<li>${hobi}</li>`).join('')}
-    </ul>
-
-    <h2>Playlist Musik</h2>
-    <a href="${student.playlist_musik}" target="_blank">Dengarkan Playlist</a>
-
-    <h2>Kesan dan Pesan</h2>
-    <ul>
-        ${student.kesan_dan_pesan.map(kesan => `
-            <li><strong>${kesan.nama}:</strong> ${kesan.pesan}</li>
-        `).join('')}
-    </ul>
-
-    <h2>Mimpi dan Cita-cita</h2>
-    <p>${student.mimpi_dan_cita_cita}</p>
-
-    <h2>Statistik Akademis</h2>
-    <div class="chart-container">
-        <canvas id="semester-chart"></canvas>
-    </div>
+<section class="container-section">
+<div class="stats">
+<h2>Statistik Akademis</h2>
     <p>Semester 1: Rata-rata ${student.statistik_akademis.semester_1.rata_rata}</p>
     <p>Semester 2: Rata-rata ${student.statistik_akademis.semester_2.rata_rata}</p>
+</div>
+</section>
 
-    <h2>Badge Penghargaan</h2>
-    <!-- Add Badge Section here if needed -->
+<section class="container-section">
+<div class="">
+
+</div>
+</section>
+
+
+    </div>
+    <div class="tab-content" id="likes">
+        Content for Likes
+    </div>
+    <div class="tab-content" id="replies">
+        Content for Tweets & replies
+    </div>
+    <div class="controls">
+        <button onclick="switchTheme();" class="btn">Switch theme</button>
+    </div>
+    
+
+
+
+
+
+
+
 </div>
 
             `;
