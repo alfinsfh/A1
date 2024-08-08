@@ -1,4 +1,7 @@
 
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const studentId = urlParams.get('id');
@@ -84,47 +87,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
             profileDiv.innerHTML = `
 <div class="content">
+
     <div class="navigation">
         <div class="arrow_back">
             <p onclick="window.history.back()">Kembali</p>
         </div>
         <div class="header">${student.nama_lengkap}</div>
-        <div class="subtext">25 Tweets</div>
+        <div class="subtext">25</div>
     </div>
 
     <div class="wallpaper">
-        <div class="container-banner">
-            <!-- Banner Section -->
-            ${student.foto_galeri.map((foto, index) => `
-                <div class="banner">
-                    <img class="banner-image" id="myImg${index + 1}" src="${foto}" alt="Image ${index + 1}">
-                </div>
-            `).join('')}
+                <p>Statistik Nilai Rata-Rata</p>
+            <div class="container-bar">
+        <div class="bar" data-value="${student.statistik_akademis.semester_1.rata_rata}">
+            <span>Semester 1</span>
         </div>
-
-        <div class="links">
-            <a href="https://x.com/GibsonSMurray/status/1811980098502787267" target="_blank" rel="noreferrer">
-                <span>Tutorial</span>
-                <i class="icon" data-lucide="link"></i>
-            </a>
-            <a href="https://x.com/bartek_marzec/status/1798078019770482740/video/1" target="_blank" rel="noreferrer">
-                <span>Inspiration</span>
-                <i class="icon" data-lucide="sparkle"></i>
-            </a>
+        <div class="bar" data-value="${student.statistik_akademis.semester_2.rata_rata}">
+            <span>Semester 2</span>
         </div>
-
-        <!-- Modal -->
-        <div id="myModal" class="modal">
-            <div class="modal-overlay"></div>
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <img class="modal-image" id="img01" alt="Modal Image">
-                    <div class="modal-caption" id="caption"></div>
-                </div>
-            </div>
+        <div class="bar" data-value="75">
+            <span>Semester 3</span>
+        </div>
+        <div class="bar" data-value="50">
+            <span>Semester 4</span>
         </div>
     </div>
+        </div>   
 
     <div class="bio">
         <div class="pre-bio">
@@ -260,9 +248,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="tab-content" id="replies">
         Content for Tweets & replies
     </div>
-    <div class="controls">
-        <button onclick="switchTheme();" class="btn">Switch theme</button>
-    </div>
+
     
 
 
@@ -276,27 +262,12 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
 
 
-            const modal = document.getElementById('myModal');
-            const imgs = document.querySelectorAll('.banner-image');
-
-            imgs.forEach(img => {
-                img.addEventListener('click', function() {
-                    modal.style.display = 'block';
-                    document.getElementById('img01').src = this.src;
-                    document.getElementById('caption').innerHTML = this.alt || '';
-                });
-            });
-
-            const span = document.getElementsByClassName('close')[0];
-            span.addEventListener('click', function() {
-                modal.style.display = 'none';
-            });
-
-            window.addEventListener('click', function(event) {
-                if (event.target == modal) {
-                    modal.style.display = 'none';
-                }
-            });
+                               // JavaScript to handle bar widths
+                               const bars = document.querySelectorAll('.bar');
+                               bars.forEach(bar => {
+                                   const value = parseInt(bar.getAttribute('data-value'));
+                                   bar.style.width = `${value}%`;
+                               });
 
             // Add event listeners for tab switching
             const tabs = document.querySelectorAll('.tabs div');
@@ -360,3 +331,4 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 };
+

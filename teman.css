@@ -1,21 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --gap: 8vh; /* Adjust gap based on viewport width */
+    --background-color: #1c1c1e;
+    /* Dark gray background */
+    --text-color: #f2f2f7;
+    /* Light gray text */
+    --primary-color: #0a84ff;
+    /* Blue accent color */
+    --secondary-color: #3a3a3c;
+    /* Darker gray for elements */
+    --border-color: #2c2c2e;
+    /* Border color */
+    --highlight-color: #5ac8fa;
+    /* Highlight color */
+
+
+
+    --bkg-color: #000000;
+    --wallpaper-color: #3e5366;
+
+    --primary-color: white;
+    --secondary-text: #8898a6;
+
+    --border-color: #38444d;
+
+    --pfp-border: 4px;
+
+    /* Color accents*/
+    --classic-blue: 29, 161, 241;
+    --avocado-green: 25, 191, 100;
+    --orange-sun: blue;
+    /* --- */
+
+    --accent-color-rgb: rgb(85, 85, 209);
+    --accent-color: rgb(171, 255, 88);
+}
+
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Open Sans", sans-serif;
     background-color: #000000;
     margin: 0;
     padding: 0;
-}
-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-button:hover {
-    background-color: #0056b3;
 }
 #friend-list-container {
     max-width: 600px;
@@ -25,11 +52,6 @@ button:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-top: 20px;
-}
-h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #ffffff;
 }
 #friend-list {
     list-style: none;
@@ -41,6 +63,10 @@ h1 {
     align-items: center;
     padding: 10px;
     border-bottom: 1px solid #303030;
+}
+
+.friend-item:hover {
+    background-color: var(--background-color);
 }
 .friend-item:last-child {
     border-bottom: none;
@@ -56,6 +82,7 @@ h1 {
     flex: 1;
     list-style: none;
     text-decoration: none;
+    line-height: 14px;
 }
 
 .friend-info a {
@@ -70,4 +97,45 @@ h1 {
 .friend-status {
     font-size: 14px;
     color: #888;
+}
+
+.header-all {
+    margin: 0 auto;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.282);
+    filter: blur(24%);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 18px 20px;
+    color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.back-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.header-title {
+    margin: 0;
+    font-size: 20px;
+    margin-left: 10px;
+    flex-grow: 1; /* Ensures the title takes up remaining space */
+}
+
+.back-button:focus {
+    outline: none;
+}
+
+.back-button:hover {
+    color: #ddd;
 }

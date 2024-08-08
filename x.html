@@ -3,40 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar Teman</title>
+    <title>Semester Grade Bars</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
 
+        .container-bar {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .bar {
+            position: relative;
+            margin: 10px 0;
+            height: 30px;
+            border: 1px solid;
+            overflow: hidden;
+            background-color: #ddd;
+            transform: rotate(-10deg); /* Rotate the bar */
+            transform-origin: left center; /* Rotate around the left edge */
+        }
+
+        .bar span {
+            display: block;
+            height: 100%;
+            text-align: right;
+            line-height: 30px;
+            color: #fff;
+            font-weight: bold;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            right: 10px; /* Position the text to the right edge */
+            padding-right: 10px; /* Add some padding to the right */
+            box-sizing: border-box; /* Ensure padding is included in width */
+        }
+
+        /* Specific colors for each bar */
+        .bar:nth-child(1) {
+            background-color: #ff5733; /* Example color 1 */
+        }
+        .bar:nth-child(2) {
+            background-color: #33ff57; /* Example color 2 */
+        }
+        .bar:nth-child(3) {
+            background-color: #3357ff; /* Example color 3 */
+        }
+        .bar:nth-child(4) {
+            background-color: #f1c40f; /* Example color 4 */
+        }
     </style>
 </head>
 <body>
-    <button onclick="window.history.back()">Kembali</button>
-    <div id="friend-list-container">
-        <h1>Daftar Teman</h1>
-        <ul id="friend-list">
-            <li class="friend-item">
-                <img src="avatar1.jpg" alt="Avatar" class="friend-avatar">
-                <div class="friend-info">
-                    <p class="friend-name">Nama Teman 1</p>
-                    <p class="friend-status">Online</p>
-                </div>
-            </li>
-            <li class="friend-item">
-                <img src="avatar2.jpg" alt="Avatar" class="friend-avatar">
-                <div class="friend-info">
-                    <p class="friend-name">Nama Teman 2</p>
-                    <p class="friend-status">Offline</p>
-                </div>
-            </li>
-            <!-- Add more friends here -->
-        </ul>
-    </div>
+    <div class="container-bar">
+        <div class="bar" data-value="80">
+            <span>Semester 1</span>
+        </div>
+        <div class="bar" data-value="90">
+            <span>Semester 2</span>
+        </div>
+        <div class="bar" data-value="75">
+            <span>Semester 3</span>
+        </div>
+        <div class="bar" data-value="85">
+            <span>Semester 4</span>
+        </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const bars = document.querySelectorAll('.bar');
+
+            bars.forEach(bar => {
+                const value = parseInt(bar.getAttribute('data-value'));
+                bar.style.width = `${value}%`;
+            });
+        });
+    </script>
 </body>
 </html>
-
-
-<li>
-    <a href="siswa.html?id=${friend.id_siswa}">
-        <img src="${friend.foto_profil}" alt="${friend.nama_lengkap}" class="profile-pic">
-        ${friend.nama_lengkap}
-    </a>
-</li>

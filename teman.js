@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const urlParams = new URLSearchParams(window.location.search);
     const studentId = urlParams.get('id');
 
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
                      <img src="${friend.foto_profil}" alt="${friend.nama_lengkap}" class="friend-avatar">
                      <div class="friend-info">
                     <p class="friend-name">${friend.nama_lengkap}</p>
-                    <p class="friend-status">Offline</p>
+                    <p class="friend-status">${student.kelas}, ${student.jabatan_di_kelas}</p>
                 </a>
             </li>
 
