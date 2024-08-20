@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    outline: none;
 }
 
 :root {
@@ -18,6 +19,7 @@ body {
     /* Border color */
     --highlight-color: #5ac8fa;
     /* Highlight color */
+    outline: none;
 }
 
 h1,
