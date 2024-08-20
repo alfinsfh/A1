@@ -26,19 +26,24 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             function renderStudents(students) {
+                const studentList = document.getElementById('studentList');
                 studentList.innerHTML = '';
                 students.forEach(student => {
                     const div = document.createElement('div');
                     div.classList.add('student-card');
                     div.innerHTML = `
-                        <img src="${student.foto_profil}" alt="${student.nama_panggilan}" class="profile-pic">
-                        <h2><a href="siswa.html?id=${student.id_siswa}">${student.nama_lengkap}</a></h2>
-                        <p>${student.kelas} - ${student.jurusan}</p>
+                        <a href="siswa.html?id=${student.id_siswa}" class="student-link">
+                            <div class="student-card-header">
+                                <img src="${student.foto_profil}" alt="${student.nama_panggilan}" class="profile-pic">
+                                <h2 class="student-name">${student.nama_lengkap}</h2>
+                            </div>
+                        </a>
                     `;
                     studentList.appendChild(div);
                 });
             }
-
+            
+            
             function filterStudents() {
                 const searchValue = searchInput.value.toLowerCase();
                 const kelasValue = kelasFilter.value;

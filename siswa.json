@@ -22,7 +22,7 @@
             "Ketua OSIS"
         ],
         "aktivitas_ekstrakurikuler": [
-            {"id_ekskul": "basket", "nama": "Basket", "logo": "https://id.wikipedia.org/static/images/icons/wikipedia.png"},
+            {"id_ekskul": "basket", "nama": "Basket", "logo": "img/ketu.png"},
             {"id_ekskul": "choir", "nama": "Paduan Suara", "logo": "https://id.wikipedia.org/static/images/icons/wikipedia.png"}
         ],
         "foto_galeri": ["https://i.pinimg.com/736x/d6/18/a1/d618a1bdd23c0bdc288a139c09110a52.jpg","https://i.pinimg.com/736x/d6/18/a1/d618a1bdd23c0bdc288a139c09110a52.jpg","https://i.pinimg.com/736x/d6/18/a1/d618a1bdd23c0bdc288a139c09110a52.jpg","https://i.pinimg.com/736x/d6/18/a1/d618a1bdd23c0bdc288a139c09110a52.jpg", "https://i.pinimg.com/736x/d6/18/a1/d618a1bdd23c0bdc288a139c09110a52.jpg"],
@@ -41,7 +41,8 @@
         },
         "badge_penghargaan": [
             {"nama": "Best Student", "logo": "Best-Student.svg"},
-            {"nama": "Science Olympiad Winner", "logo": "Best-Student.svg"}
+            {"nama": "Science Olympiad Winner", "logo": "Best-Student.svg"},
+            {"nama": "Ketua Osis Angakatan 34", "logo": "img/ketu.png"}
         ]
     },
     {
@@ -62,7 +63,8 @@
         "quote_favorit": "Be yourself; everyone else is already taken.",
         "teman_terdekat": ["1", "54321"],
         "prestasi": [
-            "Juara 2 Olimpiade Matematika"
+            "Juara 2 Olimpiade Matematika",
+            "Juara 1 Olimpiade Biologi"
         ],
         "aktivitas_ekstrakurikuler": [
             {"id_ekskul": "basket", "nama": "Basket", "logo": "basket_logo.png"}

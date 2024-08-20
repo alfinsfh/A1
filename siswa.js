@@ -88,13 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
             profileDiv.innerHTML = `
 <div class="content">
 
-    <div class="navigation">
-        <div class="arrow_back">
-            <p onclick="window.history.back()">Kembali</p>
-        </div>
-        <div class="header">${student.nama_lengkap}</div>
-        <div class="subtext">25</div>
-    </div>
+
 
     <div class="wallpaper">
                 <p>Statistik Nilai Rata-Rata</p>
