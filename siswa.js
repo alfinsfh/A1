@@ -113,14 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="pfp">
                 <img src="${student.foto_profil}" alt="${student.nama_panggilan}">
             </div>
-            <div class="badge-container">
-                ${student.badge_penghargaan.map(badge => `
-                    <div class="tooltip-container">
-                        <img src="${badge.logo}" alt="${badge.nama}" class="badge-logo">
-                        <span class="tooltip">${badge.nama}</span>
-                    </div>
-                `).join('')}
-            </div>
+         
         </div>
 
         <div>
@@ -188,8 +181,32 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 </section>
 
+<section class="container-section">
+   <div class="badge-container">
+       <h2>Badge</h2>
+                ${student.badge_penghargaan.map(badge => `
+                    <div class="tooltip-container">
+                        <img src="${badge.logo}" alt="${badge.nama}" class="badge-logo">
+                        <span class="tooltip">${badge.nama}</span>
+                    </div>
+                `).join('')}
+            </div>
+</section>
 
-
+ <section class="container-section">
+        <h2>Timeline Pendidikan</h2>
+        <ul class="timeline-list">
+            ${student.timeline_pendidikan.map(entry => `
+                <li class="timeline-item">
+                    <div class="timeline-date">${entry.startYear} - ${entry.endYear}</div>
+                    <div class="timeline-content">
+                        <h3>${entry.title}</h3>
+                        <p>${entry.institution}</p>
+                    </div>
+                </li>
+            `).join('')}
+        </ul>
+    </section>
 
     </div>
 
@@ -228,11 +245,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 </section>
 
-<section class="container-section">
-<div class="">
 
-</div>
-</section>
 
 
     </div>

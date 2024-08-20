@@ -2,7 +2,7 @@
 
 :root {
     --gap: 8vh; /* Adjust gap based on viewport width */
-    --background-color: #1c1c1e;
+    --background-color: #161616;
     /* Dark gray background */
     --text-color: #f2f2f7;
     /* Light gray text */
@@ -108,7 +108,7 @@ body {
     filter: blur(24%);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
-    height: 10vh;
+    height: 8vh;
     color: white;
     position: fixed;
     top: 0;

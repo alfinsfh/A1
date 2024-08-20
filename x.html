@@ -3,84 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Semester Grade Bars</title>
+    <title>Timeline Pendidikan - Dark Mode</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
             padding: 20px;
+            line-height: 1.6;
         }
 
-        .container-bar {
-            max-width: 600px;
-            margin: 0 auto;
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #ffffff;
         }
 
-        .bar {
+        .timeline {
             position: relative;
-            margin: 10px 0;
-            height: 30px;
-            border: 1px solid;
-            overflow: hidden;
-            background-color: #ddd;
-            transform: rotate(-10deg); /* Rotate the bar */
-            transform-origin: left center; /* Rotate around the left edge */
+            max-width: 900px;
+            margin: auto;
         }
 
-        .bar span {
-            display: block;
-            height: 100%;
-            text-align: right;
-            line-height: 30px;
-            color: #fff;
-            font-weight: bold;
+        .timeline::after {
+            content: '';
             position: absolute;
-            width: 100%;
+            width: 4px;
+            background-color: #03dac6;
             top: 0;
-            right: 10px; /* Position the text to the right edge */
-            padding-right: 10px; /* Add some padding to the right */
-            box-sizing: border-box; /* Ensure padding is included in width */
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
         }
 
-        /* Specific colors for each bar */
-        .bar:nth-child(1) {
-            background-color: #ff5733; /* Example color 1 */
+        .timeline-entry {
+            padding: 20px 30px;
+            position: relative;
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            width: 45%;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        .bar:nth-child(2) {
-            background-color: #33ff57; /* Example color 2 */
+
+        .timeline-entry.left {
+            left: 0;
         }
-        .bar:nth-child(3) {
-            background-color: #3357ff; /* Example color 3 */
+
+        .timeline-entry.right {
+            left: 55%;
         }
-        .bar:nth-child(4) {
-            background-color: #f1c40f; /* Example color 4 */
+
+        .timeline-entry::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #03dac6;
+            top: 15px;
+            left: -10px;
+        }
+
+        .timeline-entry.right::before {
+            left: auto;
+            right: -10px;
+        }
+
+        .timeline-entry h3 {
+            margin-bottom: 10px;
+            color: #03dac6;
+        }
+
+        .timeline-entry p {
+            color: #b0b0b0;
+        }
+
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 20px;
+            }
+
+            .timeline-entry {
+                width: 100%;
+                padding-left: 40px;
+                padding-right: 25px;
+            }
+
+            .timeline-entry.left,
+            .timeline-entry.right {
+                left: 0;
+            }
+
+            .timeline-entry.right::before,
+            .timeline-entry.left::before {
+                left: 15px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container-bar">
-        <div class="bar" data-value="80">
-            <span>Semester 1</span>
-        </div>
-        <div class="bar" data-value="90">
-            <span>Semester 2</span>
-        </div>
-        <div class="bar" data-value="75">
-            <span>Semester 3</span>
-        </div>
-        <div class="bar" data-value="85">
-            <span>Semester 4</span>
-        </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const bars = document.querySelectorAll('.bar');
 
-            bars.forEach(bar => {
-                const value = parseInt(bar.getAttribute('data-value'));
-                bar.style.width = `${value}%`;
-            });
-        });
-    </script>
+    <h1>Timeline Pendidikan</h1>
+    
+    <div class="timeline">
+        <div class="timeline-entry left">
+            <h3>Sekolah Dasar</h3>
+            <p>SD Negeri 01 - 2005 hingga 2011</p>
+        </div>
+        <div class="timeline-entry right">
+            <h3>Sekolah Menengah Pertama</h3>
+            <p>SMP Negeri 02 - 2011 hingga 2014</p>
+        </div>
+        <div class="timeline-entry left">
+            <h3>Sekolah Menengah Atas</h3>
+            <p>SMA Negeri 03 - 2014 hingga 2017</p>
+        </div>
+        <div class="timeline-entry right">
+            <h3>Perguruan Tinggi</h3>
+            <p>Universitas XYZ - 2017 hingga 2021</p>
+        </div>
+    </div>
+
 </body>
 </html>

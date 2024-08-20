@@ -16,7 +16,7 @@
         },
         "foto_profil": "https://i.pinimg.com/564x/c7/fe/52/c7fe5203dd9cc8a8a59393b8a522426c.jpg",
         "quote_favorit": "Stay positive, work hard, make it happen.",
-        "teman_terdekat": ["1", "2","3","4","5"],
+        "teman_terdekat": ["1", "2", "3", "4", "5"],
         "prestasi": [
             "Juara 1 Olimpiade Biologi",
             "Ketua OSIS"
@@ -25,7 +25,10 @@
             {"id_ekskul": "basket", "nama": "Basket", "logo": "img/ketu.png"},
             {"id_ekskul": "choir", "nama": "Paduan Suara", "logo": "https://id.wikipedia.org/static/images/icons/wikipedia.png"}
         ],
-        "foto_galeri": ["https://i.pinimg.com/736x/d6/18/a1/d618a1bdd23c0bdc288a139c09110a52.jpg","https://i.pinimg.com/736x/d6/18/a1/d618a1bdd23c0bdc288a139c09110a52.jpg","https://i.pinimg.com/736x/d6/18/a1/d618a1bdd23c0bdc288a139c09110a52.jpg","https://i.pinimg.com/736x/d6/18/a1/d618a1bdd23c0bdc288a139c09110a52.jpg", "https://i.pinimg.com/736x/d6/18/a1/d618a1bdd23c0bdc288a139c09110a52.jpg"],
+        "foto_galeri": [
+            "https://i.pinimg.com/736x/d6/18/a1/d618a1bdd23c0bdc288a139c09110a52.jpg",
+            "https://i.pinimg.com/736x/d6/18/a1/d618a1bdd23c0bdc288a139c09110a52.jpg"
+        ],
         "hobi_dan_minat": [
             "Membaca",
             "Travelling"
@@ -43,6 +46,32 @@
             {"nama": "Best Student", "logo": "Best-Student.svg"},
             {"nama": "Science Olympiad Winner", "logo": "Best-Student.svg"},
             {"nama": "Ketua Osis Angakatan 34", "logo": "img/ketu.png"}
+        ],
+        "timeline_pendidikan": [
+            {
+                "title": "Sekolah Dasar",
+                "institution": "SD Negeri 01",
+                "startYear": 2005,
+                "endYear": 2011
+            },
+            {
+                "title": "Sekolah Menengah Pertama",
+                "institution": "SMP Negeri 02",
+                "startYear": 2011,
+                "endYear": 2014
+            },
+            {
+                "title": "Sekolah Menengah Atas",
+                "institution": "SMA Negeri 03",
+                "startYear": 2014,
+                "endYear": 2017
+            },
+            {
+                "title": "Perguruan Tinggi",
+                "institution": "Universitas XYZ",
+                "startYear": 2017,
+                "endYear": 2021
+            }
         ]
     },
     {
@@ -126,6 +155,32 @@
         },
         "badge_penghargaan": [
             {"nama": "Top Scorer", "logo": "top_scorer_badge.png"}
+        ],
+        "timeline_pendidikan": [
+            {
+                "title": "Sekolah Dasar",
+                "institution": "SD Negeri 01",
+                "startYear": 2005,
+                "endYear": 2011
+            },
+            {
+                "title": "Sekolah Menengah Pertama",
+                "institution": "SMP Negeri 02",
+                "startYear": 2011,
+                "endYear": 2014
+            },
+            {
+                "title": "Sekolah Menengah Atas",
+                "institution": "SMA Negeri 03",
+                "startYear": 2014,
+                "endYear": 2017
+            },
+            {
+                "title": "Perguruan Tinggi",
+                "institution": "Universitas XYZ",
+                "startYear": 2017,
+                "endYear": 2021
+            }
         ]
     },
     {
@@ -167,6 +222,32 @@
         },
         "badge_penghargaan": [
             {"nama": "Top Scorer", "logo": "top_scorer_badge.png"}
+        ],
+        "timeline_pendidikan": [
+            {
+                "title": "Sekolah Dasar",
+                "institution": "SD Negeri 01",
+                "startYear": 2005,
+                "endYear": 2011
+            },
+            {
+                "title": "Sekolah Menengah Pertama",
+                "institution": "SMP Negeri 02",
+                "startYear": 2011,
+                "endYear": 2014
+            },
+            {
+                "title": "Sekolah Menengah Atas",
+                "institution": "SMA Negeri 03",
+                "startYear": 2014,
+                "endYear": 2017
+            },
+            {
+                "title": "Perguruan Tinggi",
+                "institution": "Universitas XYZ",
+                "startYear": 2017,
+                "endYear": 2021
+            }
         ]
     }
 ]

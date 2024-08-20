@@ -15,7 +15,7 @@ body {
 
 :root {
     --gap: 8vh; /* Adjust gap based on viewport width */
-    --background-color: #1c1c1e;
+    --background-color: #161616;
     /* Dark gray background */
     --text-color: #f2f2f7;
     /* Light gray text */
@@ -167,7 +167,7 @@ a {
         linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
     background-size: 55px 55px;
     height: 250px;
-    margin-top: 10vh;
+    margin-top: 8vh;
     overflow: hidden;
 }
 
@@ -271,8 +271,8 @@ a {
     justify-content: center;
     align-items: center;
     display: flex;
-    margin: 10px;
-    padding: 10px;
+    margin: 6px;
+    padding: 12px;
 
     position: relative;
     cursor: pointer;
@@ -393,14 +393,19 @@ button {
 }
 
 .container-section {
-    border-radius: 20px;
+    border-radius: 8px;
     margin-top: 24px;
+    background-color: #161616;
+    padding: 18px;
+    font-size: 14px;
 }
 
-.sec-informasi h2, .sec-extra h2, .sec-prestasi h2, .stats h2{
+section h2 {
     color: var(--primary-color);
     margin-bottom: 12px;
-    font-size: 20px;
+    font-size: 16px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
 }
 
 .sec-prestasi ul {
@@ -422,6 +427,10 @@ button {
     align-items: center;
     text-decoration: none;
     color: inherit;
+}
+
+.extracurricular-item:hover {
+    background-color: var(--border-color);
 }
 
 .activity-logo {
@@ -515,4 +524,46 @@ button {
 }
 .bar:nth-child(4) {
     background-color: #f828ff; /* Example color 4 */
+}
+
+.timeline-list {
+    list-style: none;
+    padding: 0;
+    border-left: 2px solid var(--accent-color);
+}
+
+.timeline-item {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    left: -5px;
+    top: 20px;
+}
+
+.timeline-date {
+    font-weight: bold;
+    color: #b0b0b0;
+    margin-left: 12px;
+}
+
+.timeline-content h3 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 15px;
+    margin-left: 12px;
+}
+
+.timeline-content p {
+    margin: 5px 0 0;
+    color: #e0e0e0;
+    margin-left: 12px;
+    font-size: 14px;
 }

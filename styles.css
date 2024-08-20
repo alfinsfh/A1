@@ -6,7 +6,7 @@ body {
 }
 
 :root {
-    --background-color: #1c1c1e;
+    --background-color: #161616;
     /* Dark gray background */
     --text-color: #f2f2f7;
     /* Light gray text */
@@ -102,11 +102,12 @@ h2 {
 
 .activity-logo,
 .badge-logo {
-    width: 100px;
+    width: 300px;
     height: auto;
     border-radius: 50%;
     display: flex;
 }
+
 
 .student-card:hover {
     transform: translateY(-5px);
@@ -158,13 +159,7 @@ button {
 }
 
 .badge-container {
-    border: 1px solid var(--border-color);
-    padding: 6px 34px;
-    border-radius: 50px;
-    margin-right: 24px;
-    align-items: center;
-    display: flex;
-    position: relative;
+  
 }
 
 
@@ -177,9 +172,9 @@ button {
 
 .tooltip-container .badge-logo {
     cursor: pointer;
-    width: 24px;
+    width: 40px;
     /* Adjust size as needed */
-    height: 24px;
+    height: 40px;
     /* Adjust size as needed */
     margin-left: 4px;
 }
